@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #d3d9de;
+}
+
 h2 {
   font-size: 2rem;
   color: #333333;

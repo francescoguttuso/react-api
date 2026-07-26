@@ -51,18 +51,15 @@ function App() {
       <h2>Attori</h2>
       <div className="cards-grid">
         {actors.map((actor) => (
-          <>
-            {/* sezione attori */}
-            <Card
-              key={actor.id}
-              name={actor.name}
-              birth_year={actor.birth_year}
-              nationality={actor.nationality}
-              biography={actor.biography}
-              image={actor.image}
-              known_for={actor.known_for}
-            />
-          </>
+          <Card
+            key={actor.id}
+            name={actor.name}
+            birth_year={actor.birth_year}
+            nationality={actor.nationality}
+            biography={actor.biography}
+            image={actor.image}
+            known_for={actor.known_for}
+          />
         ))}
       </div>
 
