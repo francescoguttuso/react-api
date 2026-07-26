@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Card } from "./components/Card";
 import "./App.css";
 
 function App() {
@@ -47,6 +48,36 @@ function App() {
     <div>
       <h1>Cineteca React</h1>
       <p>Controlla la console del browser (F12) per vedere le liste!</p>
+      <h2>Attori</h2>
+      <div className="actors-grid">
+        {actors.map((actor) => (
+          <Card
+            key={actor.id}
+            name={actor.name}
+            birth_year={actor.birth_year}
+            nationality={actor.nationality}
+            biography={actor.biography}
+            image={actor.image}
+            known_for={actor.known_for}
+          />
+        ))}
+      </div>
+
+      {/* BONUS 1: Sezione Attrici Donne */}
+      <h2>Attrici</h2>
+      <div className="actresses-grid">
+        {actresses.map((actress) => (
+          <Card
+            key={actress.id}
+            name={actress.name}
+            birth_year={actress.birth_year}
+            nationality={actress.nationality}
+            biography={actress.biography}
+            image={actress.image}
+            known_for={actress.known_for}
+          />
+        ))}
+      </div>
     </div>
   );
 }
