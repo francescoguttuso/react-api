@@ -47,25 +47,28 @@ function App() {
   return (
     <div>
       <h1>Cineteca React</h1>
-      <p>Controlla la console del browser (F12) per vedere le liste!</p>
+      <p>Lista di attori attrici con info in card</p>
       <h2>Attori</h2>
-      <div className="actors-grid">
+      <div className="cards-grid">
         {actors.map((actor) => (
-          <Card
-            key={actor.id}
-            name={actor.name}
-            birth_year={actor.birth_year}
-            nationality={actor.nationality}
-            biography={actor.biography}
-            image={actor.image}
-            known_for={actor.known_for}
-          />
+          <>
+            {/* sezione attori */}
+            <Card
+              key={actor.id}
+              name={actor.name}
+              birth_year={actor.birth_year}
+              nationality={actor.nationality}
+              biography={actor.biography}
+              image={actor.image}
+              known_for={actor.known_for}
+            />
+          </>
         ))}
       </div>
 
-      {/* BONUS 1: Sezione Attrici Donne */}
+      {/* Sezione Attrici*/}
       <h2>Attrici</h2>
-      <div className="actresses-grid">
+      <div className="cards-grid">
         {actresses.map((actress) => (
           <Card
             key={actress.id}
