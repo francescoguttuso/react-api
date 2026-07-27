@@ -1,6 +1,9 @@
 import "./Card.css";
 
 export const Card = (props) => {
+  const formattedKnownFor = Array.isArray(props.known_for)
+    ? props.known_for.join(", ")
+    : props.known_for;
   return (
     <div className="card-actor">
       <div className="card-image-container">
@@ -17,7 +20,7 @@ export const Card = (props) => {
         <p className="card-bio">{props.biography}</p>
 
         <div className="card-known-for">
-          <strong>Famoso/a per:</strong> {props.known_for}
+          <strong>Famoso/a per:</strong> {formattedKnownFor}
         </div>
       </div>
     </div>
