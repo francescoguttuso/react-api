@@ -2,7 +2,7 @@ import "./Card.css";
 
 export const Card = (props) => {
   return (
-    <div className="card-actors">
+    <div className="card-actor">
       <div className="card-image-container">
         <img src={props.image} alt={props.name} className="card-image" />
       </div>
