@@ -47,7 +47,7 @@ function App() {
   return (
     <div>
       <h1>Cineteca React</h1>
-      <p>Lista di attori attrici con info in card</p>
+      <p>Lista di attori e attrici con info in card</p>
       <h2>Attori</h2>
       <div className="cards-grid">
         {actors.map((actor) => (
