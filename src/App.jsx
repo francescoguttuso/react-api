@@ -56,6 +56,7 @@ function App() {
             name={actor.name}
             birth_year={actor.birth_year}
             nationality={actor.nationality}
+            awards={actor.awards}
             biography={actor.biography}
             image={actor.image}
             known_for={actor.known_for}
@@ -72,6 +73,7 @@ function App() {
             name={actress.name}
             birth_year={actress.birth_year}
             nationality={actress.nationality}
+            awards={actress.awards}
             biography={actress.biography}
             image={actress.image}
             known_for={actress.known_for}

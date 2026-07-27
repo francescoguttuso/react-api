@@ -4,6 +4,10 @@ export const Card = (props) => {
   const formattedKnownFor = Array.isArray(props.known_for)
     ? props.known_for.join(", ")
     : props.known_for;
+
+  const formattedAwards = Array.isArray(props.awards)
+    ? props.awards.join(", ")
+    : props.awards;
   return (
     <div className="card-actor">
       <div className="card-image-container">
@@ -15,6 +19,7 @@ export const Card = (props) => {
         <p className="card-info">
           <strong>Nascita:</strong> {props.birth_year} |{" "}
           <strong>Nazionalità:</strong> {props.nationality}
+          <strong> Riconoscimenti:</strong> {formattedAwards}
         </p>
 
         <p className="card-bio">{props.biography}</p>
