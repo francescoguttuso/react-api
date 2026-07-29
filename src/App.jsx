@@ -9,38 +9,26 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPeople = async () => {
-      try {
-        setLoading(true);
+    setLoading(true);
 
-        const [resActors, resActresses] = await Promise.all([
-          axios.get("https://lanciweb.github.io/demo/api/actors/"),
-          axios.get("https://lanciweb.github.io/demo/api/actresses/"),
-        ]);
-
+    Promise.all([
+      axios.get("https://lanciweb.github.io/demo/api/actors/"),
+      axios.get("https://lanciweb.github.io/demo/api/actresses/"),
+    ])
+      .then(([resActors, resActresses]) => {
         console.log("Dati Attori dall'API:", resActors.data);
         console.log("Dati Attrici dall'API:", resActresses.data);
 
         setActors(resActors.data);
         setActresses(resActresses.data);
-      } catch (error) {
+      })
+      .catch((error) => {
         console.error("Errore durante il recupero dei dati:", error.message);
-      } finally {
+      })
+      .finally(() => {
         setLoading(false);
-      }
-    };
-
-    fetchPeople();
+      });
   }, []);
-
-  useEffect(() => {
-    if (actors.length > 0) {
-      console.log("Stato 'actors' aggiornato con successo:", actors);
-    }
-    if (actresses.length > 0) {
-      console.log("Stato 'actresses' aggiornato con successo:", actresses);
-    }
-  }, [actors, actresses]);
 
   if (loading) return <p>Caricamento in corso...</p>;
 
